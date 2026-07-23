@@ -3,14 +3,17 @@ requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [project]
-name = "repo_template"
-version = "0.1.0"
-description = "Repository template for my Python projects"
+name = "zipsearcher"
+version = "1.0.0"
+description = "Search filenames inside zip archives via the central directory, without decompressing."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
-authors = [{ name = "Fanni Jako", email = "fannijako@gmail.com" }]
+authors = [{ name = "Emasoft", email = "713559+Emasoft@users.noreply.github.com" }]
 dependencies = []
+
+[project.scripts]
+zipsearcher = "src.entrypoint:main"
 
 [project.optional-dependencies]
 test = [
@@ -28,7 +31,7 @@ build = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/fannijako/repo_template"
+Homepage = "https://github.com/Emasoft/zipsearcher"
 
 [tool.poetry]
 packages = [{ include = "src" }]
