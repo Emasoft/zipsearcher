@@ -17,13 +17,13 @@ zipsearcher = "src.entrypoint:main"
 
 [project.optional-dependencies]
 test = [
-    "pytest>=9.0.3",
+    "pytest>=9.1.1",
     "pytest-cov>=7.1.0",
 ]
 dev = [
-    "ruff>=0.15.14",
-    "mypy>=2.1.0",
-    "pre-commit>=4.6.0",
+    "ruff>=0.15.22",
+    "mypy>=2.3.0",
+    "pre-commit>=4.6.1",
 ]
 build = [
     "build>=1.2.0",
