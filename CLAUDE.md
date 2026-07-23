@@ -2,8 +2,6 @@
 
 Operating guide for AI agents working in this repo. `README.md` covers what the project is; this file covers how to work on it.
 
-> **Template note:** this repo was created from [fannijako/repo_template](https://github.com/fannijako/repo_template). While template placeholders remain, run the `adopt-template` skill (`.claude/skills/adopt-template/`) first.
-
 ## Toolchain
 
 - **uv** — environment + dependencies. Never `pip install`; use `uv add` / `uv add --group dev`.
@@ -46,6 +44,7 @@ Lint, typecheck, and tests must pass locally before opening a PR.
 
 ## Project specifics
 
-<!-- Filled in when adopting the template; the adopt-template skill sweeps this section. -->
-- Environment variables: `KEY_NAME` — placeholder, see README Usage.
-- External services / infrastructure: none yet.
+- CLI tool: `zipsearcher` searches filenames inside `.zip` archives via the central directory only (`zipfile.ZipFile(path).infolist()` / `.namelist()`) — it MUST NEVER call `.read()`, `.open()`, or `.extract*()`, because that would decompress payloads. The read site in `src/entrypoint.py` carries a comment stating this.
+- Stdlib only: keep `dependencies = []` and do not add runtime deps (uv.lock must stay valid via `uv sync --locked`).
+- Console script: `zipsearcher = "src.entrypoint:main"`; `main()` returns a grep-like exit code (0 match / 1 no match / 2 error).
+- Environment variables: none. External services / infrastructure: none.
