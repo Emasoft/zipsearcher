@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(make sync)",
+      "Bash(make lint)",
+      "Bash(make format)",
+      "Bash(make format-check)",
+      "Bash(make typecheck)",
+      "Bash(make test)",
+      "Bash(make pre-commit)",
+      "Bash(uv --version)",
+      "Bash(uv sync:*)",
+      "Bash(uv lock)",
+      "Bash(uv tree:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run ruff:*)",
+      "Bash(uv run mypy:*)",
+      "Bash(uv run pre-commit:*)"
+    ]
+  }
+}
